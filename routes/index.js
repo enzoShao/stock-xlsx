@@ -7,7 +7,7 @@ const title = ['成交價','昨收','漲跌價','漲跌幅','振幅','開盤','�
 /* GET home page. */
 router.get("/", async function (req, res, next) {
   console.log(req.query)
-  const { stockName, filteredNumbers } = await scrapeData(req.query.stockId);
+  const { stockName, filteredNumbers } = await scrapeData('1455');
 
   const result = title.reduce((obj, key, index) => {
     obj[key] = filteredNumbers[index]; // 将当前的 key (来自数组 b) 映射到数组 a 的相应值
